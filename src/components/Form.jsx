@@ -5,15 +5,15 @@ class Form extends Component {
 	render(){
 
 		var formStyle = {
-			marginTop: "100px", 
-			left: "50%"
-		}
+			marginTop: "20px", 
+			textAlign: "center"
+ 		}
 
 		return(
 			<form onSubmit={this.props.getWeather} style={formStyle}>
-				<input type="text" className="m-2" name="country" placeholder="Country..."/>
-				<input type="text" className="m-2" name="city" placeholder="City..."/>
-				<input type="submit" className="btn btn-primary m-2" value="find weather"/>
+				<input type="text" name="country" className="form-control" placeholder="Country..."/>
+				<input type="text" name="city" className="my-2 form-control" placeholder="City..."/>
+				<input type="submit" className="btn btn-primary" value="find weather"/>
 			</form>
 		);
 	}

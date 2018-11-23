@@ -4,19 +4,34 @@ class Weather extends Component {
 
 	render(){
 
-		var resultStyle = {
-			textAlign: "left",
-			marginLeft: "50px",
-			marginTop: "10px"
+		const {country, city, temperature, humidity, description, error} = this.props.result;
+
+		const resultStyle = {
+			margin: "40px 10px 0 10px",
+			color: "red",
+			height: "50%",
 		}
 
+		const valueStyle = {
+			color: "white",
+		}
+
+		const lineStyle = {
+			lineHeight: "225%",
+			fontWeight: "100"
+		}
+
+
+
+
 		return(
+		
 			<div style={resultStyle}>
-				{this.props.result.country && this.props.result.city && <h4>Place: <span>{this.props.result.country}, {this.props.result.city}</span></h4>}
-				{this.props.result.temperature && <h4>Temperature: <span>{this.props.result.temperature}</span></h4>}
-				{this.props.result.humidity && <h4>Humidity: <span>{this.props.result.humidity}</span></h4>}
-				{this.props.result.description && <h4>Description: <span>{this.props.result.description}</span></h4>}
-				{this.props.result.error && <h4>{this.props.result.error}</h4>}
+				{country && city && <h3 style={lineStyle}>Place: <span style={valueStyle}>{country}, {city}</span></h3>}
+				{temperature && <h3 style={lineStyle}>Temperature: <span style={valueStyle}>{temperature} &deg;C</span></h3>}
+				{humidity && <h3 style={lineStyle}>Humidity: <span style={valueStyle}>{humidity}</span></h3>}
+				{description && <h3 style={lineStyle}>Description: <span style={valueStyle}>{description}</span></h3>}
+				{error && <h3 style={lineStyle}>{error}</h3>}
 			</div>
 		);
 	}

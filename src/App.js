@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Form from './components/Form';
 import Frame from './components/Frame';
 
 const API_KEY = "1d6b1e16378c30cd13df4c27552a4ed5";
@@ -48,11 +47,18 @@ class App extends Component {
 		console.log(result);
 	}
 
+	
+
 
     render() {
 
+    	const frameStyle = {
+    		height: "100%",
+    		width: "100%",
+    	}
+
 	    return (
-	      <div>
+	      <div style={frameStyle}>
 	        <Frame getWeather={this.getWeather} result={this.state}/>
 	      </div>
 	    );
